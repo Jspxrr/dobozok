@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+<body> 
+    <h4>1.Feladat</h4>
+    <p id="write"></p>
+    <h4>2.Feladat</h4>
+    <p id="writetwo"></p>
+    <h4>3.Feladat</h4>
+    <p id="writethree"></p>
+    <h4>4.Feladat</h4>
+    <p id="writefour"></p>
+    <h4>5.Feladat</h4>
+    <p id="writefive"></p>
+    <h4>6.Feladat</h4>
+    <p id="writesix"></p>
+    <h4>7.Feladat</h4>
+    <p id="writeseven"></p>
+
+    <script>
+         //1. feladat
+        function fofuggveny(value)
+        {
+            document.getElementById("write").innerHTML = value;
+        }
+
+        function szamologep(num1, num2)
+        {
+            let sum = num1 + num2;
+            fofuggveny(sum);
+        }
+
+    szamologep(5, 10);
+
+    //2. feladat
+    function myDis(some) 
+    {
+        document.getElementById("writetwo").innerHTML = some;
+    }
+
+    let myProm = new Promise(function(myResolve, myReject)
+    {
+        let req = new XMLHttpRequest();
+        req.open('GET', "mycar.html");
+        req.onload = function()
+        {
+        if (req.status == 200)
+        {   
+            myResolve(req.response);
+        } 
+        else
+        {
+            myReject("File not Found");
+        }   
+        };
+        req.send();
+    });
+
+    myProm.then(
+    function(value) {myDis(value);},
+    function(error) {myDis(error);}
+    );
+
+    //3. feladat
+    let value=0;
+    setInterval(function()
+    {
+        document.getElementById("writethree").innerHTML=value+=1;
+    }, 5000);
+
+
+    //4. feladat
+    function myDisplayer(s) {
+        document.getElementById("writefour").innerHTML = s;
+    }
+
+    let myPromise = new Promise(function(myResolve, myReject)
+    {
+        let x=prompt("Kérem adjon meg egy számot!");
+        let number=parseInt(x);  
+
+    if (number%2==0)
+    {
+        myResolve("Ez a szám páros szám!");
+    }
+    else if(number!=Number)
+    {
+        myReject("Error,Ez az érték nem szám típusú!");
+    }
+    else
+    {
+        myReject("Error,Ez a szám páratlan szám!");
+    }
+    });
+
+    myPromise.then
+    (
+        function(value) {myDisplayer(value);},
+        function(error) {myDisplayer(error);}
+    );
+
+    //5. feladat
+    let ertek=1;
+    setInterval(function()
+    {
+        ertek+=1;
+        document.getElementById("writefive").innerHTML=ertek**ertek;
+    }, 3000);
+
+    //6. feladat
+    setTimeout(myFunction, 60000);
+
+    function myFunction()
+    {
+        document.getElementById("writesix").innerHTML = "Lejárt az idő!";
+    }
+
+    //7. feladat
+    async function getFile()
+    {
+        let my = new Promise(function(resolve)
+        {
+            let req = new XMLHttpRequest();
+            req.open('GET', "mycar.html");
+            req.onload = function()
+            {
+                if (req.status == 200)
+                {
+                    resolve(req.response);
+                }
+                else
+                {
+                    resolve("File not Found");
+                }
+            };
+            req.send();
+        });
+        document.getElementById("writeseven").innerHTML = await my;
+    }
+
+    getFile();
+
+
+    </script>
+</body>
+</html>

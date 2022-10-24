@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dolgozat</title>
+		<script>
+			let bemenet;
+			//1 . feladat
+			function egy()
+			{
+				bemenet = prompt("Írja be a hónap számát: ");
+				(bemenet=="1")?console.log("J"):
+				(bemenet=="2")?console.log("F"):
+				(bemenet=="3")?console.log("M"):
+				(bemenet=="4")?console.log("Á"):
+				(bemenet=="5")?console.log("M"):
+				(bemenet=="6")?console.log("J"):
+				(bemenet=="7")?console.log("J"):
+				(bemenet=="8")?console.log("A"):
+				(bemenet=="9")?console.log("Sz"):
+				(bemenet=="10")?console.log("O"):
+				(bemenet=="11")?console.log("N"):
+				(bemenet=="12")?console.log("D"):
+				console.log("Helytelen bemenet!");
+			}
+			//2. feladat
+			function ketto()
+			{
+				bemenet=prompt("Írjon be szöveget: ");
+				(bemenet.toLowerCase()=="egy")?console.log("1"):
+				(bemenet.toLowerCase()=="kettő")?console.log("2"):
+				(bemenet.toLowerCase()=="három")?console.log("3"):
+				(bemenet.toLowerCase()=="négy")?console.log("4"):
+				(bemenet.toLowerCase()=="öt")?console.log("5"):
+				(bemenet.toLowerCase()=="hat")?console.log("6"):
+				(bemenet.toLowerCase()=="hét")?console.log("7"):
+				(bemenet.toLowerCase()=="nyolc")?console.log("8"):
+				(bemenet.toLowerCase()=="kilenc")?console.log("9"):
+				(bemenet.toLowerCase()=="tíz")?console.log("10"):
+				(bemenet.toLowerCase()=="nulla")?console.log("0"):
+				console.log("Nem lehetett számmá alakítani!");
+			}
+			//3. feladat
+			function harom()
+			{
+				bemenet=prompt("Kérlek írd be, hogy igaz-e, hogy tanultál? ");
+				(bemenet.toLowerCase()=="igen")?bemenet=true:
+				(bemenet.toLowerCase()=="nem")?bemenet=false:
+				console.log("Helytelen bemenet!");
+
+				(bemenet==true)?console.log("Tanult"):
+				console.log("Nem tanult");
+			}
+			//4. feladat
+			function negy()
+			{
+				bemenet=prompt("Írjon be egy számot: ");
+				(bemenet=="1")?console.log("Egy"):
+				(bemenet=="2")?console.log("Kettő"):
+				(bemenet=="3")?console.log("Három"):
+				(bemenet=="4")?console.log("Négy"):
+				(bemenet=="5")?console.log("Öt"):
+				(bemenet=="6")?console.log("Hat"):
+				(bemenet=="7")?console.log("Hét"):
+				(bemenet=="8")?console.log("Nyolc"):
+				(bemenet=="9")?console.log("Kilenc"):
+				(bemenet=="10")?console.log("Tíz"):
+				(bemenet=="0")?console.log("Nulla"):
+				console.log("Nem ismert bemenet!");
+			}
+			//5. feladat
+			egy();
+			ketto();
+			harom();
+			negy();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
